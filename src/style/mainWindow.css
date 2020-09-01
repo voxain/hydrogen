@@ -1,0 +1,114 @@
+.mainWindow-main{
+    /* Size & Padding */
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px;
+
+    /* Colors */
+    background: var(--background-color);
+    color: var(--foreground-color);
+    
+    /* Flex Setup */
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    /* Other Styles */
+    border-radius: 12px;
+    box-shadow: 0px 7px 15px rgba(30, 30, 50, .2);
+    overflow: hidden;
+}
+
+.mainWindow-main .toolbar {
+    display: flex;
+    flex-direction: column;
+    grid-area: 1 / 1 / 2 / 2; 
+    -webkit-app-region: drag;
+}
+    .mainWindow-main .toolbar .app-actions, .mainWindow-main .toolbar .tablist{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+    .mainWindow-main .toolbar .tablist{
+        width: 100%;
+        flex: 1;
+    }
+
+.mainWindow-main .web-view { 
+    grid-area: 1 / 2 / 2 / 3; 
+}
+
+.sidebar-entry{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    position: relative;
+    -webkit-app-region: no-drag;
+}
+    .sidebar-entry .entry-icon{
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .2s ease;
+    }
+    .sidebar-entry .entry-tooltip{
+        width: auto;
+        white-space: nowrap;
+        height: 36px;
+        padding-left: 18px;
+        padding-right: 18px;
+        margin: 10px;
+        border-radius: 6px;
+        background: white;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        transition: .2s ease;
+        left: 55px;
+        top: 0px;
+        position: absolute;
+        box-shadow: 0px 4px 9px rgba(30, 30, 50, .1);
+        animation: slideLeft .2s ease;
+    }
+    .sidebar-entry .entry-icon img{
+        width: 28px;
+        height: 28px;
+    }
+    .sidebar-entry:hover .entry-icon{
+        background: #eee;
+    }
+    .sidebar-entry:hover .entry-tooltip{
+        display: flex;
+    }
+    .sidebar-entry:hover .entry-tooltip.toggle{
+        display: none;
+    }
+@keyframes slideLeft{
+    0%{
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+input{
+    font-family: var(--font-primary);
+    border: none;
+    width: 300px;
+    height: 90%;
+    font-size: 16px;
+}
+input:focus{
+    outline: none;
+}
