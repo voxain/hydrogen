@@ -49,7 +49,7 @@
                     </div>
                 </div>
 
-                <div class="tablist">
+                <div class="tablist" id="tablist">
                     <div class="sidebar-entry">
                         <div class="entry-icon">
                             <img src="../../images/icons/home.svg">
@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="app-actions lower">                 
-                    <div class="sidebar-entry">
+                    <div class="sidebar-entry" onclick="new tab('github.com')">
                         <div class="entry-icon">
                             <img src="../../images/icons/add.svg">
                         </div>
@@ -93,7 +93,7 @@
                 </div>
 
             </div>
-            <webview src="newTab.html" id="webview" enableremotemodule=false class="web-view"></webview>
+            <webview src="system/newTab.html" id="webview" enableremotemodule=false class="web-view"></webview>
         </div>
     </body>
 </html>

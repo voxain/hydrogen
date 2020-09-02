@@ -112,3 +112,47 @@ input{
 input:focus{
     outline: none;
 }
+
+
+/* Skidded loading spinner from https://loading.io/css/*/
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 1.7px solid var(--foreground-color);
+    opacity: 1;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 20px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    50% {
+      top: 10px;
+      left: 10px;
+      width: 20px;
+      height: 20px;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 40px;
+      height: 40px;
+      opacity: 0;
+    }
+  }
+  
