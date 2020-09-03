@@ -1,20 +1,20 @@
 const electron = require('electron').remote.getCurrentWindow();
 
-let generateTab = url => {
+let generateTab = (url, id) => {
     let parser = new DOMParser();
 
     let view = document.createElement('webview');
     let tab = parser.parseFromString(`
-        <div class="sidebar-entry">
+        <div id="tab-${id}" class="sidebar-entry">
             <div class="entry-icon">
-                ::ICON::
+            <img id="loading-${id}" class="loading" src="::ICON::">
             </div>
-            <div class="entry-tooltip">
+            <div id="name-${id}" class="entry-tooltip">
                 ::NAME::
             </div>
         </div>
     `.replace(/::NAME::/g, url)
-    .replace(/::ICON::/g, '<div class="lds-ripple"><div></div><div></div></div>')
+    .replace(/::ICON::/g, '../../images/icons/loading.svg')
     , 'text/html');
 
     return {
@@ -26,10 +26,18 @@ let generateTab = url => {
 class tab{
     constructor(initURL, id){
         this.id = id || Math.round( Math.random() * 0x10000 );
-        this.DOM = generateTab(initURL);
+        this.DOM = generateTab(initURL, this.id);
         
+
+        this.DOM.view.addEventListener('did-start-loading', () => {
+            
+        })
+        this.DOM.view.addEventListener('did-stop-loading', () => {
+            
+        })
+
         console.log(this.DOM.tab.body.childNodes)
-        document.querySelector('#tablist').append(this.DOM.tab.body);
+        document.querySelector('#tablist').append(this.DOM.tab.body.children[0]);
     }
 
     loadURL(url){
