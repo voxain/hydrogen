@@ -13,6 +13,7 @@ body{
     align-items: center;
     justify-content: center;
     position: relative;
+    flex-direction: column;
 }
 
 .scrolldown-indicator{
@@ -24,4 +25,32 @@ body{
     justify-content: center;
     left: calc(50% - 30px);
     bottom: 10px;
+    animation: scroll 4s ease infinite;
+}
+
+@keyframes pop{
+    0%{
+        transform: rotate(0deg)
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes scroll{
+    0%{
+        transform: translateY(0px)
+    }
+    10%{
+        transform: translateY(10px)
+    }
+    20%{
+        transform: translateY(0px)
+    }
+    30%{
+        transform: translateY(10px)
+    }
+    40%, 100%{
+        transform: translateY(0px)
+    }
 }

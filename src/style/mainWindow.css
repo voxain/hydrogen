@@ -10,10 +10,13 @@
     
     /* Flex Setup */
     display: grid;
-    grid-template-columns: 60px 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    grid-template-areas: 
+      "sidebar"
+      "webview"; 
 
     /* Other Styles */
     border-radius: 12px;
@@ -23,14 +26,15 @@
 
 .mainWindow-main .toolbar {
     display: flex;
-    flex-direction: column;
-    grid-area: 1 / 1 / 2 / 2; 
+    flex-direction: row;
+    grid-area: "sidebar"; 
     -webkit-app-region: drag;
+    background: #18182a;
+    background-size: cover;
 }
     .mainWindow-main .toolbar .app-actions, .mainWindow-main .toolbar .tablist{
         display: flex;
-        flex-direction: column;
-        width: 100%;
+        flex-direction: row;
         height: auto;
     }
     .mainWindow-main .toolbar .tablist{
@@ -40,7 +44,7 @@
     }
 
 .mainWindow-main .web-view { 
-    grid-area: 1 / 2 / 2 / 3; 
+    grid-area: "webview"; 
 }
 
 .sidebar-entry{
@@ -49,7 +53,7 @@
     cursor: pointer;
     position: relative;
     -webkit-app-region: no-drag;
-    animation: slideLeft .3s ease;
+    animation: slideDown .3s ease;
 }
     .sidebar-entry .entry-icon{
         width: 40px;
@@ -60,6 +64,9 @@
         justify-content: center;
         align-items: center;
         transition: .2s ease;
+    }
+    .sidebar-entry .entry-icon iconify-icon{
+        color: white;
     }
     .sidebar-entry .entry-tooltip{
         width: auto;
@@ -74,18 +81,18 @@
         justify-content: center;
         align-items: center;
         transition: .2s ease;
-        left: 55px;
-        top: 0px;
+        left: -50%;
+        top: 50px;
         position: absolute;
         box-shadow: 0px 4px 9px rgba(30, 30, 50, .1);
-        animation: slideLeft .2s ease;
+        animation: slideDown .2s ease;
     }
     .sidebar-entry .entry-icon img{
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
     }
     .sidebar-entry:hover .entry-icon{
-        background: #eee;
+        background: rgba(255,255,255,.2);
     }
     .sidebar-entry:hover .entry-tooltip{
         display: flex;
@@ -129,13 +136,13 @@ input:focus{
     }
 }
 
-@keyframes slideLeft{
+@keyframes slideDown{
     0%{
-        transform: translateX(-20px);
+        transform: translateY(-20px);
         opacity: 0;
     }
     100%{
-        transform: translateX(0px);
+        transform: translateY(0px);
         opacity: 1;
     }
 }

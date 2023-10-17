@@ -6,20 +6,13 @@
         <link rel="stylesheet" href="../../style/mainWindow.css" />
 
         <script src="../../js/hydrogen.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     </head>
     <body onload="loaded()">
         <div class="mainWindow-main">
             <div class="toolbar">
 
                 <div class="app-actions"> 
-                    <div class="sidebar-entry" onclick="electron.close()">
-                        <div class="entry-icon">
-                            <img src="../../images/icons/close.svg">
-                        </div>
-                        <div class="entry-tooltip">
-                            Close
-                        </div>
-                    </div>
 
                     <!--<div class="sidebar-entry" onclick="electron.maximize()">
                         <div class="entry-icon">
@@ -41,7 +34,7 @@
 
                     <div class="sidebar-entry" onclick="document.querySelector('webview').back()">
                         <div class="entry-icon">
-                            <img src="../../images/icons/back.svg">
+                            <iconify-icon icon="ph:arrow-left" width="24" height="24"></iconify-icon>
                         </div>
                         <div class="entry-tooltip">
                             Back
@@ -50,7 +43,7 @@
                     
                     <div class="sidebar-entry" id="addressbar-toggle" onclick="toggleAddressBar()">
                         <div class="entry-icon">
-                            <img src="../../images/icons/at.svg">
+                            <iconify-icon icon="ph:navigation-arrow"  width="24" height="24"></iconify-icon>
                         </div>
                         <div class="entry-tooltip">
                             Address Bar
@@ -64,7 +57,7 @@
                 <div class="tablist" id="tablist">
                     <div class="sidebar-entry">
                         <div class="entry-icon">
-                            <img src="../../images/icons/home.svg">
+                            <iconify-icon icon="ph:house-simple"  width="24" height="24"></iconify-icon>
                         </div>
                         <div class="entry-tooltip">
                             Start Page
@@ -75,7 +68,7 @@
                 <div class="app-actions lower">                 
                     <div class="sidebar-entry" onclick="new tab('github.com')">
                         <div class="entry-icon">
-                            <img src="../../images/icons/add.svg">
+                            <iconify-icon icon="ph:plus-circle"  width="24" height="24"></iconify-icon>
                         </div>
                         <div class="entry-tooltip">
                             New Tab
@@ -84,10 +77,19 @@
 
                     <div class="sidebar-entry">
                         <div class="entry-icon">
-                            <img src="../../images/icons/settings.svg">
+                            <iconify-icon icon="ph:gear-six"  width="24" height="24"></iconify-icon>
                         </div>
                         <div class="entry-tooltip">
                             Settings
+                        </div>
+                    </div>
+
+                    <div class="sidebar-entry" onclick="electron.close()">
+                        <div class="entry-icon">
+                            <iconify-icon icon="ph:x"  width="24" height="24"></iconify-icon>
+                        </div>
+                        <div class="entry-tooltip">
+                            Close
                         </div>
                     </div>
                 </div>
