@@ -1,9 +1,10 @@
 body{
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
     overflow: auto;
+    scroll-snap-type: y mandatory;
+    background: rgba(255,255,255,1);
 }
 
 .ntp-wrapper{
@@ -14,6 +15,9 @@ body{
     justify-content: center;
     position: relative;
     flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 10rem;
+    scroll-snap-align: center;
 }
 
 .scrolldown-indicator{
@@ -53,4 +57,11 @@ body{
     40%, 100%{
         transform: translateY(0px)
     }
+}
+
+li{
+    margin-bottom: 15px;
+}
+sub{
+    opacity: .5;
 }

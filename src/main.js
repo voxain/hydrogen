@@ -19,4 +19,5 @@ app.on('ready', () => {
     });
 
     mainWindow.loadFile('./views/mainWindow/index.html')
+
 });

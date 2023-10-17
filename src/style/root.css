@@ -27,5 +27,15 @@ body, html{
 }
 
 ::-webkit-scrollbar{
-    display: none;
+    width: 12px;
+    padding: 2px;
+}
+::-webkit-scrollbar-thumb{
+    background: gray;
+    border: 2px solid transparent;
+    margin: 2px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track{
+    padding: 2px;
 }

@@ -5,7 +5,6 @@
     margin: 20px;
 
     /* Colors */
-    background: var(--background-color);
     color: var(--foreground-color);
     
     /* Flex Setup */
@@ -30,7 +29,6 @@
     grid-area: "sidebar"; 
     -webkit-app-region: drag;
     background: #18182a;
-    background-size: cover;
 }
     .mainWindow-main .toolbar .app-actions, .mainWindow-main .toolbar .tablist{
         display: flex;

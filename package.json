@@ -7,5 +7,8 @@
     "start": "electron src/main.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^27.0.0"
+  }
 }
